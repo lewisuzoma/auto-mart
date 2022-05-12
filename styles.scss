@@ -1,0 +1,114 @@
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+
+@import "~material-icons/iconfont/material-icons.css";
+
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+    --h1-size: 4rem;
+    --h1-weight: 900;
+    --h2-size: 3rem;
+    --h2-weight: 700;
+    --h3-size: 2rem;
+    --h3-weight: 600;
+    --h4-size: 1.5rem;
+    --h4-weight: 600;
+    --h5-size: 1.2rem;
+    --h5-weight: 600;
+    --h6-size: 1rem;
+    --h6-weight: 600;
+    --p-size: 1rem;
+    --p-weight: 400;
+    --mt-4: 4rem;
+    --mt-2: 2.5rem;
+    --mb-1: 1.5rem;
+    --mb-4: 4rem;
+    --header-bg-color: #121117;
+    --nav-brand-height: 55px;
+    --top-nav-item-color: #f5f5f5;
+    --nav-item-color: #121117;
+    --primary-color: #4528DC;
+    --secondary-color: #57048A;
+    --white-color: #f9f9f9;
+    --black-color: #040402;
+    --grey-color: #f3f5f7;
+    --dark-grey-color: #191919;
+    --primary-t-color: #f5f5f5;
+    --secondary-t-color: #f5f5f5;
+    --primary-p-color: #8E8E8E;
+    --secondary-p-color: #E1E1E1;
+    --primary-b-color: #f5f5f5;
+    --primary-l-color: rgba(0, 0, 0, .12);
+    --secondary-l-color: rgba(255, 255, 255, 0.12);
+    --valid-color: #007a4d;
+    --invalid-color: #e34f4f;
+    --primary-bg-color: #09080D;
+    --primary-bg-color-2: #eeeeee;
+    --primary-bg-color-3: #e5e5e5;
+    --secondary-bg-color: #040402;
+    --secondary-bg-color-2: #111111;
+    --secondary-bg-color-3: #191919;
+    --card-bg-color: #16151A;
+    --footer-bg-color: #121117;
+}
+
+/* Global Stylings  */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica", sans-serif; background-color: var(--primary-bg-color);}
+mat-sidenav-content { background-color: var(--primary-bg-color); }
+@media (max-width: 991px){
+    body h1 {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 767px){
+    body h1 {
+        font-size: 3rem;
+    }
+}
+.mat-drawer-container,
+  .mat-drawer-content {
+    height: auto !important;
+    overflow: hidden !important;
+  }
+
+.mat-card {
+    background: var(--primary-l-color)!important;
+}
+/* Buttons */
+.btn {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white-color);
+    border-radius: 100px !important;
+    z-index: 1;
+}
+.btn-bordered-white {
+    background: transparent none repeat scroll 0 0;
+    border: 2px solid #fff !important;
+}
+
+/* Margins */
+.mt-2 {
+    margin-top: var(--mt-2)!important;
+}
+.mt-4 {
+    margin-top: var(--mt-4)!important;
+}
+.mb-1 {
+    margin-bottom: var(--mb-1)!important;
+}
+.mb-4 {
+    margin-bottom: var(--mb-4)!important;
+}
+.container {
+    padding: 0 20px;
+}
+
+
+/* Colors */
+.text-primary {
+    color: var(--primary-color)!important;
+}
