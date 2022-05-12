@@ -1,0 +1,47 @@
+<section class="postAds container mt-4" fxLayout="row" fxLayoutAlign="center">
+	
+	<div>
+		<h1 class="mat-display-5 mt-4">
+            Post Ads
+       </h1>
+         
+       <h2 class="mat-subheading-1">
+            We offer the best adventure holidays and tailor-made trips!
+       </h2>
+		<form [formGroup]="form" (ngSubmit)="saveDetails(form)" style="width:50vw;">
+	        <mat-form-field appearance="fill" fxLayout="column">
+	            <mat-label>Name</mat-label>
+	            <input matInput maxlength="15" inputmode="tel" placeholder="Type name" formControlName="name" #nameInput>
+	            <mat-hint>Mini character 2: {{ nameInput.value.length }}/2</mat-hint>
+	            <mat-error>Name is required</mat-error>
+	            <mat-error *ngIf="(form.get('name'))?.errors?.minlength">
+	                Please enter more than 2 character
+	            </mat-error>
+	        </mat-form-field>
+
+	        <mat-form-field appearance="fill" fxLayout="column">
+	            <mat-label>Price:</mat-label>
+	            <input matInput type="number" formControlName="price" placeholder="Input Price">
+	            <mat-error *ngIf="(form.get('price'))?.errors?.required">Price is required</mat-error>
+	        </mat-form-field>
+
+	        <mat-form-field appearance="fill" fxLayout="column">
+	            <mat-label>Description:</mat-label>
+	            <textarea matInput placeholder="desc" formControlName="desc"></textarea>
+	            <mat-error *ngIf="(form.get('desc'))?.errors?.required">Description is required</mat-error>
+	        </mat-form-field>
+
+	        
+      		<input formControlName="file" id="file" type="file" class="form-control" (change)="onFileChange($event)" multiple accept="image/*" />
+      		 <mat-error *ngIf="(form.get('file'))?.errors?.required">Image is required</mat-error>
+        	
+
+	        <div mat-dialog-actions align="end">
+	            <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
+	        </div>
+	    </form>
+
+	    <div>{{ form?.value | json }}</div>
+	</div>
+
+</section>

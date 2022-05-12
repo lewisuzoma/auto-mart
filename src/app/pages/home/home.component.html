@@ -1,0 +1,77 @@
+<section class="hero container" fxLayout="row" fxLayoutAlign="start center">
+
+    <div class="hero-content">
+    	
+    	<span class="mt-2">Auto Mart</span>
+
+       <h1 class="hero-title mat-display-2 mt-4">
+            Discover, buy, and sell good cars
+       </h1>
+         
+       <h2 class="hero-subtitle mat-subheading-1">
+            We offer the best adventure holidays and tailor-made trips!
+       </h2>
+         
+       <a class="btn btn-bordered-white mb-1" mat-raised-button [routerLink]="'/market'">
+            <mat-icon>shop</mat-icon> Buy
+       </a>
+    
+    </div>
+
+</section>
+<section class="best-sales container mt-4">
+
+	<span>Best Sales</span>
+
+	<div fxLayout="row wrap" fxLayout.sm="column wrap" fxLayoutAlign="start" fxLayoutGap="20px">
+		<mat-card class="best-sales-card mt-4" *ngFor="let car of StoreList | slice:1:7" >
+		  <mat-card-header>
+		    <mat-card-title class="mat-h5 text-primary">{{car.name}} </mat-card-title>
+		  </mat-card-header>
+		  <img mat-card-image [src]="car?.image" [alt]="car?.alt">
+		  <mat-card-content>
+		    <p>
+				{{car.description}}	      
+		    </p>
+		    <p mat-subheading-1 style="color: var(--primary-p-color);">Price: {{car.price}}</p><p mat-subheading-1> Date Added: {{car.date_added}}</p>
+		  </mat-card-content>
+		  <mat-card-actions>
+		    <a mat-raised-button color="primary" [routerLink]="'/view/'  + car.id">View Details</a>
+		  </mat-card-actions>
+		</mat-card>
+	</div>
+
+</section>
+
+<section class="store container mt-4">
+
+	<span>Store</span>
+
+	<div fxLayout="row wrap" fxLayout.sm="column wrap" fxLayoutAlign="start" fxLayoutGap="20px">
+		<mat-card class="store-card mt-4" *ngFor="let car of StoreList" >
+		  <mat-card-header>
+		    <mat-card-title class="mat-h5 text-primary">{{car.name}} </mat-card-title>
+		  </mat-card-header>
+		  <img mat-card-image [src]="car.image" [alt]="car.alt">
+		  <mat-card-content>
+		    <p>
+				{{car.description}}	      
+		    </p>
+		    <p mat-subheading-1 style="color: var(--primary-p-color);">Price: {{car.price}}</p><p mat-subheading-1> Date Added: {{car.date_added}}</p>
+		  </mat-card-content>
+		  <mat-card-actions>
+		    <a mat-raised-button color="primary" [routerLink]="'/view/' + car.id">View Details</a>
+		  </mat-card-actions>
+		</mat-card>
+	</div>
+
+</section>
+
+<section class="load-more container mt-4 mb-4">
+	<div fxLayout="row" fxLayoutAlign="center center"> 
+		<button mat-raised-button color="primary">Load More</button>
+	</div>
+</section>
+
+
+
